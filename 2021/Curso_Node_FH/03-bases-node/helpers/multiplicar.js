@@ -1,5 +1,7 @@
 
 const fs = require('fs');
+const colors = require('colors');
+
 
 const crearArchivo = async(base = 5, listar = false) =>{
 
@@ -8,13 +10,14 @@ const crearArchivo = async(base = 5, listar = false) =>{
         let salida = '';
         
         for (let index = 1; index <= 10; index++) {
-            salida += `${base} x ${index} = ${base * index}\n`;
+            salida += `${base} ${'x'.red} ${index} ${'='.red} ${base * index}\n`;
         }
         
         if (listar) {
-            console.log('=================');
-            console.log(`== Tabla del ${base} ==`);
-            console.log('=================');
+            console.log('================='.green);
+            console.log('   Tabla del:'.green, colors.blue (base ));
+            console.log('================='.green);
+
             console.log(salida);
         } 
             
